@@ -1,0 +1,210 @@
+Delivered-To: nlake44@gmail.com
+Received: by 2002:a2e:bea3:0:0:0:0:0 with SMTP id a35csp261007ljr;
+        Tue, 21 Feb 2023 16:49:59 -0800 (PST)
+X-Received: by 2002:a05:6870:1716:b0:16d:f39d:2ac with SMTP id h22-20020a056870171600b0016df39d02acmr10143957oae.15.1677026999129;
+        Tue, 21 Feb 2023 16:49:59 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1677026999; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PlhGpbE6muAyLJRwkECokPLWkwX8w5yPgA05eNey3u6yc6u+QEP6/+7/XW0Qysr4ZR
+         0B/ixBMn87bUL115v16DL/XFUZXugM6kZvOKVE6H9R9o3jr6+v4SXrepdJRy4zK42n/j
+         ZajIlmUEi1L86JqjxBbYJf6REzTKxv/gJNQb22Q8dVXYAnvegcgoGwcphePbNFWYRFek
+         gaBXfz+4TESx+1kUKuK245IthzrDRLc1dqtqWCK6hXqrnv9zCUrPUvIWpNzI+EAHVebg
+         QufxcIe6MxXeBLzvYoFMqpYMBe8EdwjKbdRbYtR8tRee2KoOGJcMHkBKWNelYfLdXI5q
+         XK8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=SwBYGDtGGyufdJitwKfXvDXcS3d9POY239yD/z7G5XE=;
+        b=RebmdZattTECR3OFXYJarx/ZdCV8UV1o6A+djqNR4RszkX99u8ZgwzUY5iZimfoJj/
+         ijRgYsWFexerUrpKXsmA/RrGMubICWL+Q8KyRMmJpm1JVHzVB4Oi/yWOBhW7CKL4WQ7d
+         pSmAVS9mvW/7ImgW8rxh4++/pPviHj7KEOkxUpip0frh8ocZVIkTtn1P3v7+jozC1j3K
+         wIGuTTPwAbH7grbUGbMsXXggxmyUEy6qr4mSUDJH6CmEAPXaDLvnYbCljT/aazOPNAi8
+         0iHJv2ZAWhv2+Q+xodCtl2vE/wTCOwVY4GN4ABmgntbYCcQtKfcy3B5P5AwZowFszaD2
+         VjPg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=IK6nfcKY;
+       spf=pass (google.com: domain of jovanchohan@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jovanchohan@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <jovanchohan@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id vl5-20020a0568710e8500b00142f7ac3997sor1476830oab.47.2023.02.21.16.49.58
+        for <nlake44@gmail.com>
+        (Google Transport Security);
+        Tue, 21 Feb 2023 16:49:59 -0800 (PST)
+Received-SPF: pass (google.com: domain of jovanchohan@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=IK6nfcKY;
+       spf=pass (google.com: domain of jovanchohan@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jovanchohan@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=SwBYGDtGGyufdJitwKfXvDXcS3d9POY239yD/z7G5XE=;
+        b=IK6nfcKYl8BmgtcmXh/8ctStguTwkgoeImxg5o9l6dAVxGONx65KA1wPczxLN+4fyo
+         agfJGxbuYBkszI10+6HfTAJD+eH9yHnrdSIImaiEQl/pH4PRrU+wKR+pgbt2RCRBDged
+         QEF5J9TdAT8BEXiQHiybaqjc3M/bIHolUfMNzp6adjiFTZu0cx9+eOG4aQr+ekdGedWm
+         DeRQbo7zenOQdIQT9+CY58iXmq6gMcElLtPRFZHVPaIkyQH63OTem5HZrpNgt+sxNpZY
+         QcgsTkuyEzwqsevOTJ9VmQAbq/ebjV1u1GxsmPy+0Jrqcg6XuO+v3xhACNuUZEno2hAl
+         ERcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=SwBYGDtGGyufdJitwKfXvDXcS3d9POY239yD/z7G5XE=;
+        b=GadszHI4cXUtY8MRBalHNHqbGJ26oQOdpdUCbABv+LRm2nYss54F3SuEhPqsJS+++M
+         0s5JQvhBOELf4XboC8Ucv2qL0TW4Z/caYUvOxeUNgBbjVC4oqqAS4LmpKxZBt9V2hApo
+         L51ZCafEJaMPGsQN1gun5qqf71YtFDTslDR/DmR5/gkj8FzuiTKflY5v1DIYThkYySD0
+         vQ5+7WYuwofo4GVly/PSscj1H3O6gdYIC6Qp1aYNrJ78Zx09Q/UeRriyQPff7e5jHxsy
+         xy8aSFq9vaXPHQhsw0TJ6jvuNol7/UhAvr4gvk8/5AAUSqqAhFfFd9HPCXL7EqmU5wny
+         PV+A==
+X-Gm-Message-State: AO0yUKXYo63I8nm+WgZG+r+z3SKu2TctM03Ka0LhMLN6xNYRSuzwlI4D
+	MU0B3H9D6DEpzra16bJrFVE/nDdaD+F07CisiKGzVxA/AveAJA==
+X-Google-Smtp-Source: AK7set9MVnQY+r46i97aDs4D/KcS4FxzW142KYQ0+bAtS29wuNi7b1t5g45nFtaFZv0iWgKj1I3IGcCFoH+gHWjXseY=
+X-Received: by 2002:a05:6871:147:b0:171:aade:b9f2 with SMTP id
+ z7-20020a056871014700b00171aadeb9f2mr1289237oab.222.1677026998355; Tue, 21
+ Feb 2023 16:49:58 -0800 (PST)
+MIME-Version: 1.0
+References: <CAPTSF-XTW=5jKyQWooxWJUopQqDBpr=JgiKyim-zcYweo2ousA@mail.gmail.com>
+ <CAL-2Y7Uq6Me5-4Z2wwYZQTGwV8eGj8QiOszqo4AnQbWoPhDBgg@mail.gmail.com> <CAL-2Y7WyMk4Yagn7fSKAo=1oLkXuvH5+HupjQ-QMjr-_9XNVjw@mail.gmail.com>
+In-Reply-To: <CAL-2Y7WyMk4Yagn7fSKAo=1oLkXuvH5+HupjQ-QMjr-_9XNVjw@mail.gmail.com>
+From: Jovan Chohan <jovanchohan@gmail.com>
+Date: Tue, 21 Feb 2023 16:49:47 -0800
+Message-ID: <CAO5d7UyvxoDVfHiuF-Oa+eoANsxZMqnWRZqzAUWxTkxd+Sc2kA@mail.gmail.com>
+Subject: Re: Leave of Absence Follow-up
+To: Navraj Chohan <nlake44@gmail.com>
+Cc: HR <hr@labelbox.com>
+Content-Type: multipart/alternative; boundary="000000000000840e1005f53f4645"
+
+--000000000000840e1005f53f4645
+Content-Type: text/plain; charset="UTF-8"
+
+Hey team,
+
+I just wanted to elaborate a bit on what Raj mentioned in his email. Raj is
+currently 2 months into a Bipolar 1 manic episode. Historically his
+episodes have lasted around 6 months. Even with the proper medication
+prescribed by his psychiatrist, there are still symptoms. The medicine
+helps keep things from escalating into further mania, but he unfortunately
+still has a lot of the symptoms. For an idea of what the symptoms are like,
+you can see this article (under the Mania section).
+
+https://www.nhs.uk/mental-health/conditions/bipolar-disorder/symptoms/
+
+Manic episodes manifest differently for different people. Some people start
+DIY projects, some focus on creating a lot of art, others engage in other
+risky behavior. For Raj it has always been coming up with new business
+ideas and starting new businesses. This has happened in his past episodes,
+and he becomes so focused and it gets ingrained into his thoughts that he
+focuses all of his efforts on it.
+
+I know it is a bit of a gray area for medical leave, but once he starts
+coming down from his episode and his thoughts return to normal the business
+ideas start to dissipate and he returns to his normal life.
+
+I'm happy to answer any further questions there may be.
+
+-Jovan
+
+On Tue, Feb 21, 2023 at 4:34 PM Navraj Chohan <nlake44@gmail.com> wrote:
+
+> Including Jovan.
+>
+> On Tue, Feb 21, 2023, 4:30 PM Navraj Chohan <nlake44@gmail.com> wrote:
+>
+>> I start companies each time I have a manic episode. They usually are
+>> taken down once the mania stops. See Supragma from two years ago.
+>> Thanks for your understanding,
+>> Raj
+>>
+>> On Tue, Feb 21, 2023, 4:24 PM HR <hr@labelbox.com> wrote:
+>>
+>>> Hi Navraj,
+>>>
+>>>
+>>> It has been brought to the company's attention via posts on LinkedIn
+>>> that you are actively engaging in work with the company UpMortem. It
+>>> appears that you have started a new company and are working for it which is
+>>> inconsistent with the medical note we received regarding your leave.
+>>>
+>>> Are you able to provide an explanation so the company can determine
+>>> whether or not your starting a company violates the terms of your leave?
+>>>
+>>>
+>>>
+>>> Thank you
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+>>>
+
+-- 
+
+
+
+-Jovan
+
+--000000000000840e1005f53f4645
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>Hey team,=C2=A0<br><br>I just wanted to elaborate a b=
+it on what Raj mentioned in his email. Raj is currently 2 months into a Bip=
+olar 1 manic episode. Historically his episodes have lasted around 6 months=
+. Even with the proper medication prescribed by his psychiatrist, there are=
+ still symptoms. The medicine helps keep things from escalating into furthe=
+r mania, but he unfortunately still has a lot of the symptoms. For an idea =
+of what the symptoms are like, you can see this article (under the Mania se=
+ction).=C2=A0</div><div><br></div><div><a href=3D"https://www.nhs.uk/mental=
+-health/conditions/bipolar-disorder/symptoms/">https://www.nhs.uk/mental-he=
+alth/conditions/bipolar-disorder/symptoms/</a><br></div><div><br></div><div=
+>Manic episodes manifest differently for different people. Some people star=
+t DIY projects, some focus on creating a lot of art, others engage in other=
+ risky behavior. For Raj it has always been coming up with new business ide=
+as and starting new businesses. This has happened in his past episodes, and=
+ he becomes so focused and it gets ingrained into his thoughts that he focu=
+ses all of his efforts on it.</div><div><br></div><div>I know it is a bit o=
+f a gray area for medical leave, but once he starts coming down from his ep=
+isode and his thoughts return to normal the business ideas start to dissipa=
+te and he returns to his normal life.</div><div><br></div><div>I&#39;m happ=
+y to answer any further questions there may be.</div><div><br></div><div>-J=
+ovan</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_at=
+tr">On Tue, Feb 21, 2023 at 4:34 PM Navraj Chohan &lt;<a href=3D"mailto:nla=
+ke44@gmail.com">nlake44@gmail.com</a>&gt; wrote:<br></div><blockquote class=
+=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rg=
+b(204,204,204);padding-left:1ex"><div dir=3D"auto">Including Jovan.</div><b=
+r><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, =
+Feb 21, 2023, 4:30 PM Navraj Chohan &lt;<a href=3D"mailto:nlake44@gmail.com=
+" target=3D"_blank">nlake44@gmail.com</a>&gt; wrote:<br></div><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px soli=
+d rgb(204,204,204);padding-left:1ex"><div dir=3D"auto">I start companies ea=
+ch time I have a manic episode. They usually are taken down once the mania =
+stops. See Supragma from two years ago.=C2=A0<div dir=3D"auto">Thanks for y=
+our understanding,</div><div dir=3D"auto">Raj</div></div><br><div class=3D"=
+gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Feb 21, 2023, 4:=
+24 PM HR &lt;<a href=3D"mailto:hr@labelbox.com" rel=3D"noreferrer" target=
+=3D"_blank">hr@labelbox.com</a>&gt; wrote:<br></div><blockquote class=3D"gm=
+ail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,=
+204,204);padding-left:1ex"><div dir=3D"ltr"><p class=3D"MsoNormal">Hi Navra=
+j,</p><p class=3D"MsoNormal"><br></p><p class=3D"MsoNormal">It has been bro=
+ught to the company&#39;s attention via posts on LinkedIn that you are acti=
+vely engaging in work with the company UpMortem. It appears that you have s=
+tarted a new company and are working for it which is inconsistent with the =
+medical note we received regarding your leave. =C2=A0</p><p class=3D"MsoNor=
+mal">Are you able to provide an explanation so the company can determine wh=
+ether or not your starting a=C2=A0company=C2=A0violates the terms of your l=
+eave?=C2=A0<u></u></p><p class=3D"MsoNormal"><br></p><p class=3D"MsoNormal"=
+><br></p><p class=3D"MsoNormal">Thank you=C2=A0</p><p class=3D"MsoNormal"><=
+br></p><p class=3D"MsoNormal"><br></p><p class=3D"MsoNormal"><u></u>=C2=A0<=
+u></u></p><p class=3D"MsoNormal"><br></p></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr"=
+ class=3D"gmail_signature"><div><br></div><div><br></div><div><br></div>-Jo=
+van</div></div>
+
+--000000000000840e1005f53f4645--

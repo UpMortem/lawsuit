@@ -1,0 +1,230 @@
+Delivered-To: nlake44@gmail.com
+Received: by 2002:a2e:9111:0:0:0:0:0 with SMTP id m17csp195568ljg;
+        Wed, 12 Apr 2023 12:58:53 -0700 (PDT)
+X-Received: by 2002:a05:6a20:b90a:b0:d9:eb9e:c2c1 with SMTP id fe10-20020a056a20b90a00b000d9eb9ec2c1mr3584930pzb.27.1681329532728;
+        Wed, 12 Apr 2023 12:58:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1681329532; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ODXrFYJaiRiiNBkeXjiQyRidF+kAG8jvBmugph/3vW7TBtRn27PlkhtapIOWDejyI3
+         LNUZdHNdwk59FFujUCHFN7Vv7mFJYzACz8t7FiQts2rBkvSnPuit3f8p8VW+ZGdhfaDC
+         Jcv9VozTAUj12odVrD/Hi8s9AcbwspQthMvHnmVcNiI1I6wdBNcO350zLrb7OGzXZpIt
+         agcV0nzumIn43est9ya9twMkvLT4MsZlQLewELJlR108qy50uxNnCRAAP+12fn1HkP3N
+         dKrrF44PrWWQ365VGnnrTZdKUSk9nXuhuS1VNi/fRZvk8Zfdx9hjRaKPkUScge9gDZAR
+         X8+A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=rJsJHz98pmKYWhIyCaX573SNrS2CXy6RGZEK+bhKxAE=;
+        b=Qwgj/WsB3mwRs2lJgJjm7prqNQZb+o2NlBhBThEZaAPiH6ieamTeQfxHP8dvUPt45c
+         myIjSZQzBf/lWDl92lIb9RWA2II9gEh5rqI7TJpELAgW+FXiXO2W0RDIkFIEw/03KpHg
+         A35uHABzjdULSDyN3ZzJ6vctp/sTGj1hyWcaW+BB29sS35cIrel/CuxLFZ/CAYxjL5Le
+         X2K62wfeN/KyOuA/UUthFJ223QOPg3gOt9DnlJceW8+Stky8bSRwQ64UeRiye+fr/m7F
+         m2ncDy7EF7Smz/SsDwyoqTvryJsi6GhTVBF2TIPxrtKn3kwtp2PwGiap2mqdfpmwvKgg
+         xXqw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=XKTDGxMt;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=labelbox.com
+Return-Path: <jackie@labelbox.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id e18-20020aa78c52000000b0063a17a0bb81sor3035187pfd.41.2023.04.12.12.58.52
+        for <nlake44@gmail.com>
+        (Google Transport Security);
+        Wed, 12 Apr 2023 12:58:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=XKTDGxMt;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=labelbox.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=labelbox.com; s=google; t=1681329532; x=1683921532;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=rJsJHz98pmKYWhIyCaX573SNrS2CXy6RGZEK+bhKxAE=;
+        b=XKTDGxMtkSJkOxu7hmlYM7GfPA7NsgSCK7VYCOjxRmFgLIz9KN+HHylCuLLT281SAy
+         MHB5M2137b5DVhkfSEnGObK6T4ZRnZGh7FQYDsiPkts7xDCP8NI5mg4shhYSlNGxBK4U
+         chg4zhInU8A5muHLHKzBejp5mvJfYx0CFSeCTxKSFE7v6VBjMsnJgZCxpoqg5NTvUqQ5
+         PL+MCcK6zPVqj4gKS69lwR2oZqlhlba42g1v8cXBlztUqR2DFCsr1nIW/qaOO0V9Y4CO
+         39SOK77OvcfkROcfMRk5SRwAo6YguUL1teqr62f0Z9KwYTSOU2WuG0QHHceH8VwEd13F
+         ivQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681329532; x=1683921532;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=rJsJHz98pmKYWhIyCaX573SNrS2CXy6RGZEK+bhKxAE=;
+        b=YXZnKMjq7heFBatEdqd3Xj/3V8OGTEOTCbMG3HSXd7iw8gOkoPX2nkzTRnNW0E6+sb
+         7dgdw9RiMLfS6DGs75wHnYoOM1cCBq2UhLWxeL8tU1WgFGX8oSntKmU8muyfhF2FuDl1
+         hhkksz/yp/Uj3lQJCxR1qHIJnCn8O3vOCYA4NIIh06LxpQ8bm3d7k9HZhYUSqdB7o8dL
+         fycbR84IdsxmrdI9wGdwc4lIUfqoTiqTX/Ye85XVVXYLhi5xRn/RkHQsGkT0QWB/7buD
+         OUgKPGgfHZCe/BCyaDQ5v/R9Li8Z4Uo7bnlmaEEJd86+pAHUnaHysKWn9vqJaFiJNsTn
+         NXCQ==
+X-Gm-Message-State: AAQBX9dwdRSAs6dGJ0VIrX3YZWesmTJO/2uvbxPePETfailWiYhJWb9P
+	KKslXol0TRMOV3uGZvpTlpMuwdSM2HResEi9n7EMZNraOb6N3mxN6y89Ow==
+X-Google-Smtp-Source: AKy350ayjcdXx66w91osX9TaNYa13995gJju70LJ4oPxkCNkQ4d456qGC6vfRCx7DhBxZPviPyccR/Yjbg/ZR25II/4=
+X-Received: by 2002:a65:6201:0:b0:4fc:2058:fa29 with SMTP id
+ d1-20020a656201000000b004fc2058fa29mr4758791pgv.1.1681329531733; Wed, 12 Apr
+ 2023 12:58:51 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAL-2Y7WSMi=x-ZdH1-NztCr5toP_0rgO-sxkg8NAUtcVe=cbEA@mail.gmail.com>
+ <CAPTSF-X3WFq2d458zSFL4X0Lj3KvAR1d5FOH1yNqPvF4XD+8Ow@mail.gmail.com> <CAL-2Y7VuJP8m6Y=MEhm9But4cDdRMmR7ZBM7MBxLU-v05Z+sDw@mail.gmail.com>
+In-Reply-To: <CAL-2Y7VuJP8m6Y=MEhm9But4cDdRMmR7ZBM7MBxLU-v05Z+sDw@mail.gmail.com>
+From: HR <hr@labelbox.com>
+Date: Wed, 12 Apr 2023 12:58:40 -0700
+Message-ID: <CAPTSF-VUwrdyg7ozT76RYD410rs+anxXC5sEi7dA6bSwRdPZqg@mail.gmail.com>
+Subject: Re: Doctors note for returning to work
+To: Navraj Chohan <nlake44@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000007d6a4205f929096d"
+
+--0000000000007d6a4205f929096d
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Raj,
+
+Thank you for the prompt response.  We are assessing all the information
+and will get back to you once we decide on the appropriate remedial steps
+and your request to return to work.
+
+
+Thanks
+
+On Tue, Apr 11, 2023 at 5:17=E2=80=AFPM Navraj Chohan <nlake44@gmail.com> w=
+rote:
+
+> Dear HR,
+>
+> Thank you for your email. I would like to address the concerns you've
+> raised in order to clarify the situation and work towards aa resolution.
+>
+> First, I want to apologize for the distress and disruption my actions hav=
+e
+> caused to my colleagues and the company. I understand that my behavior wa=
+s
+> inappropriate, and I take full responsibility for my actions.
+>
+> Regarding the incidents of harassment, I can confirm that these events
+> occurred during the manic phase of my condition. This is not an excuse fo=
+r
+> my behavior, but rather an explanation of the circumstances. I have since
+> been working closely with my therapist and physiatrist to manage my
+> condition and prevent such episodes in the future. I have learned coping
+> mechanisms to better handle stressful situations and to avoid making
+> impulsive decisions as well as now on medication to prevent future episod=
+es.
+>
+> In light of this, I would like to offer a written apology to the affected
+> employees, acknowledging the impact of my behavior and expressing my
+> commitment to ensuring it does not happen again. I understand that
+> regaining their trust will take time, and I am prepared to do whatever is
+> necessary to achieve that.
+>
+> As for my involvement in the startup, I would like to clarify that I have
+> ended my association with the company and am no longer involved in its
+> operations (effective immediately). My focus is on my responsibilities at
+> Labelbox, and I assure you there is no conflict of interest.
+>
+> I have attached a note from my doctor stating that I can return to work o=
+n
+> April 24, 2023, without any restrictions or need for accommodations. I am
+> committed to working diligently to make up for the disruption caused and =
+to
+> contribute positively to the Labelbox team.
+>
+> Please let me know if their is any additional information you need, or if
+> there are further steps I need to take in order to facilitate my return t=
+o
+> work. I am looking forward to rejoining the team and making a positive
+> impact on the company.
+>
+> Sincerely,
+>
+> Navraj Chohan
+> nlake44@gmail.com
+>
+> On Tue, Apr 11, 2023 at 1:32=E2=80=AFPM HR <hr@labelbox.com> wrote:
+>
+>> Hi Raj,
+>>
+>> Please see the attached notice and respond with the requests at your
+>> earliest convenience.
+>>
+>>
+>>
+>> Thank you
+>>
+>> On Tue, Apr 11, 2023 at 1:11=E2=80=AFPM Navraj Chohan <nlake44@gmail.com=
+> wrote:
+>>
+>>> Hello,
+>>> Please see the attached document. I am set to return on April 24th. Let
+>>> me know if you need anything else.
+>>> Thanks,
+>>> Raj
+>>>
+>>
+>
+>
+
+--0000000000007d6a4205f929096d
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr">Hi Raj,<div><br></div><div>Thank you for =
+the prompt response.=C2=A0 We are assessing all the information and will ge=
+t back to you once we decide on the appropriate remedial steps and your req=
+uest to return to work.<br></div><div><br></div><div><br></div><div>Thanks=
+=C2=A0</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"=
+gmail_attr">On Tue, Apr 11, 2023 at 5:17=E2=80=AFPM Navraj Chohan &lt;<a hr=
+ef=3D"mailto:nlake44@gmail.com">nlake44@gmail.com</a>&gt; wrote:<br></div><=
+blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-l=
+eft:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"auto"><div dir=
+=3D"ltr">Dear HR,<br><br>Thank you for your email. I would like to address =
+the concerns you&#39;ve raised in order to clarify the situation and work t=
+owards aa resolution.<br><br>First, I want to apologize for the distress an=
+d disruption my actions have caused to my colleagues and the company. I und=
+erstand that my behavior was inappropriate, and I take full responsibility =
+for my actions.<br><br>Regarding the incidents of harassment, I can confirm=
+ that these events occurred during the manic phase of my condition. This is=
+ not an excuse for my behavior, but rather an explanation of the circumstan=
+ces. I have since been working closely with my therapist and physiatrist to=
+ manage my condition and prevent such episodes in the future. I have learne=
+d coping mechanisms to better handle stressful situations and to avoid maki=
+ng impulsive decisions as well as now on medication to prevent future episo=
+des.<br><br>In light of this, I would like to offer a written apology to th=
+e affected employees, acknowledging the impact of my behavior and expressin=
+g my commitment to ensuring it does not happen again. I understand that reg=
+aining their trust will take time, and I am prepared to do whatever is nece=
+ssary to achieve that.<br><br>As for my involvement in the startup, I would=
+ like to clarify that I have ended my association with the company and am n=
+o longer involved in its operations (effective immediately). My focus is on=
+ my responsibilities at Labelbox, and I assure you there is no conflict of =
+interest.<br><br>I have attached a note from my doctor stating that I can r=
+eturn to work on April 24, 2023, without any restrictions or need for accom=
+modations. I am committed to working diligently to make up for the disrupti=
+on caused and to contribute positively to the Labelbox team.<br><br>Please =
+let me know if their is any additional information you need, or if there ar=
+e further steps I need to take in order to facilitate my return to work. I =
+am looking forward to rejoining the team and making a positive impact on th=
+e company.<br><br>Sincerely,<br><br>Navraj Chohan<br><a href=3D"mailto:nlak=
+e44@gmail.com" rel=3D"noreferrer" target=3D"_blank">nlake44@gmail.com</a><b=
+r></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmai=
+l_attr">On Tue, Apr 11, 2023 at 1:32=E2=80=AFPM HR &lt;<a href=3D"mailto:hr=
+@labelbox.com" rel=3D"noreferrer" target=3D"_blank">hr@labelbox.com</a>&gt;=
+ wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px =
+0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=
+=3D"ltr">Hi Raj,<div><br></div><div>Please see the attached notice and resp=
+ond with the requests at your earliest convenience.=C2=A0</div><div><br></d=
+iv><div><br></div><div><br></div><div>Thank=C2=A0you=C2=A0</div></div><br><=
+div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Apr=
+ 11, 2023 at 1:11=E2=80=AFPM Navraj Chohan &lt;<a href=3D"mailto:nlake44@gm=
+ail.com" rel=3D"noreferrer" target=3D"_blank">nlake44@gmail.com</a>&gt; wro=
+te:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px =
+0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"=
+auto">Hello,<div dir=3D"auto">Please see the attached document. I am set to=
+ return on April 24th. Let me know if you need anything else.</div><div dir=
+=3D"auto">Thanks,</div><div dir=3D"auto">Raj</div></div>
+</blockquote></div>
+</blockquote></div><br clear=3D"all"><div><br></div>
+</blockquote></div></div>
+
+--0000000000007d6a4205f929096d--

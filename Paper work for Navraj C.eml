@@ -1,0 +1,131 @@
+Delivered-To: nlake44@gmail.com
+Received: by 2002:a2e:a605:0:0:0:0:0 with SMTP id v5csp1260001ljp;
+        Mon, 23 Jan 2023 15:45:30 -0800 (PST)
+X-Received: by 2002:a17:90b:18a:b0:228:c8a1:3510 with SMTP id t10-20020a17090b018a00b00228c8a13510mr26331984pjs.5.1674517530616;
+        Mon, 23 Jan 2023 15:45:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1674517530; cv=none;
+        d=google.com; s=arc-20160816;
+        b=OQA9UaguLlvudDx0Dl3MEFMq9MKSccOLPkqIm1mZ6CGm37rW/lMkFVMv2IFWIdjMAB
+         Vu+WJIAAOBC2Yxx0Fb64R/YMMCb1sWbxpBO27/qFFA3T5GipFjXC5aP9T6/bwzWzYOEC
+         Chs8SSC0ChD5+gn1iKJnIMJv/0kBdxYu6CukgJuBb3e+eYEwYIDM9I9TkHXJ9tTyyLTO
+         lfqYp6u6U+2d3kc3urihWFftQK1qgb2B3lOoPFeIjjFx+ROxJaflHjUpwt6poCXKpf58
+         69olsBSgu/O1bRNrXNRPaPB2/WTqzlxflQS+0JgrBXcWrPu2u+pyCGozRPS7xqzMiA5O
+         TScQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=dw4OvjufUmvh+MRygtNjmeJdBSEj02nIU2ocsT+xVLw=;
+        b=RVqBz4NmdFJRZjLA9Kc5UQe2BooGFB/uzykxNUKvDQAzySY2weeNKMaNc0n8CcDnIb
+         R+o7FiFgVvvTMJDJ6VlsfLA6Ks26Ucbhld7eKq1i3aMEb7T54gaWAQFfROMbL6FuURyi
+         2TH50069NJj1PBJfedxk8jOz7M+YoLoIXWw/ZKmVCtn1xTfZZBHuwoq2zbbifnWJc+jA
+         2hutlS4n4cRrDUHdCshd5+quv4bArSB28Q1zz2CCwKBQCorhvvIRkSGHvPCd5+XvZvoB
+         Wq3Icc7XrU/t+QRprCPQEdfaFOJq6H7snGMD793jZvk7AmGjtym7cg3UPc64QxybBHIB
+         NIoA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=MtIPBBkN;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=labelbox.com
+Return-Path: <jackie@labelbox.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id j6-20020a17090a94c600b002294fb5ca7esor230507pjw.19.2023.01.23.15.45.30
+        for <nlake44@gmail.com>
+        (Google Transport Security);
+        Mon, 23 Jan 2023 15:45:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=MtIPBBkN;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=labelbox.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=labelbox.com; s=google;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=dw4OvjufUmvh+MRygtNjmeJdBSEj02nIU2ocsT+xVLw=;
+        b=MtIPBBkN/EKHSY9VvaqdUi1NGJIz2vL5AMqykmzDg+NO9PmfH+j/6laXTEJy0RW6vD
+         uDd68kWT2KAOdOid/flMJhDAXV1Df5Kul6kiyCot7m/CgnIo57hjkUXDkG075Wj5ISfC
+         +TPcR5WNmUpAM00ZdwiXR1dWeoFecaKpGZTHl7SLlUZpM51AsgkcJ18GrnNq3L4pXvDy
+         ZVICA9j+xT6p3EB8PQTdBvWHtSd1Qjbb6G1ApYdOPXkky+lFJmJeE3wU4eF4IQr6Vhn9
+         KaM/Btr6vE5fHeGq5ZJF4CrG9kDWh3nFGEcDSD6B9MIPL5Yr9O1OYfuj/YqQtmCzqCPG
+         zJ2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=dw4OvjufUmvh+MRygtNjmeJdBSEj02nIU2ocsT+xVLw=;
+        b=4HEAnIfOjgg5UjEmzS6V1T8t3WUuMdjAf5BW15v6vZKFZH2ZZV+7xOZdX+aE2DsrsW
+         d9imsHpVlpEZqu6ucpkytD6ojk+smxiLJi39/GwSzwE/zU9j0rCxPI6de16RcZRitmSd
+         RudyPmLEqMk/yQ0Bs8DA+Hhbs7ScVBGK1Tdj8zzWpyhOYRaxzinPT/pKxR+RVd6V6O9A
+         KbpirYXwHQ3lPBGecyWMYUWmxHG/M6133XFWG1rRMmdd1bipXSFnWOpDzxfguYAKRIT2
+         +VaaSa+6rGdL391a5dpEa+MyCs+qgSOj2WLhg8TbuwO2CrSoZJHPK4XQ7CSzP+YHhedp
+         x/yg==
+X-Gm-Message-State: AFqh2ko0QMvHCGgXA0EZjm0i7EuD+VUPxSu8QOx7BYiuZpmo/XnZ3/aQ
+	Ee2N7J0goEK2ZB5FwL14/g0zvZpOo+CWGLFrah2tmQ==
+X-Google-Smtp-Source: AMrXdXtCtNlpzr5tyW217iGQlmzxHbCNmY4iVjKk0asyl9rOzIIfcfBc+l2dSc7925nlCztRdFZfnb2Obwp4kGlfrrQ=
+X-Received: by 2002:a17:90b:3c8c:b0:229:4c8b:2ca8 with SMTP id
+ pv12-20020a17090b3c8c00b002294c8b2ca8mr3227623pjb.20.1674517529938; Mon, 23
+ Jan 2023 15:45:29 -0800 (PST)
+MIME-Version: 1.0
+References: <CABFjcEOe_ZpHc8hFkoupv=4c0XoSFfO2aDSPU_t2D13cuomvUg@mail.gmail.com>
+ <CABFjcENLegbAR+r8BQp2fr3_M6TGWg8D5u-29Cy_U3OXmdqKNw@mail.gmail.com> <CABFjcEOc68VOu14Vx3pB=m8=55LFCY-hs2Vsq98yJuKd7O2vrA@mail.gmail.com>
+In-Reply-To: <CABFjcEOc68VOu14Vx3pB=m8=55LFCY-hs2Vsq98yJuKd7O2vrA@mail.gmail.com>
+From: Jackie Ricci <jackie@labelbox.com>
+Date: Mon, 23 Jan 2023 15:45:18 -0800
+Message-ID: <CAPTSF-UA4at2FeK+yh_Vv_BrA58GdKw3TLf8P95=NyJ=zqPAtw@mail.gmail.com>
+Subject: Re: Paper work for Navraj C
+To: Balveen Singh <drbalveensingh@gmail.com>
+Cc: nlake44@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000008aebfe05f2f6fe45"
+
+--0000000000008aebfe05f2f6fe45
+Content-Type: text/plain; charset="UTF-8"
+
+Received, thank you.
+
+On Mon, Jan 23, 2023 at 12:48 PM Balveen Singh <drbalveensingh@gmail.com>
+wrote:
+
+>
+>
+> On Mon, Jan 23, 2023 at 2:44 PM Balveen Singh <drbalveensingh@gmail.com>
+> wrote:
+>
+>>
+>>
+>> ---------- Forwarded message ---------
+>> From: Balveen Singh <drbalveensingh@gmail.com>
+>> Date: Thu, Jan 19, 2023 at 5:49 PM
+>> Subject: Paper work for Navraj C
+>> To: <hr@labelbox.com>
+>>
+>>
+>>
+>>
+
+--0000000000008aebfe05f2f6fe45
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Received, thank you.=C2=A0</div><br><div class=3D"gmail_qu=
+ote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, Jan 23, 2023 at 12:48 PM=
+ Balveen Singh &lt;<a href=3D"mailto:drbalveensingh@gmail.com">drbalveensin=
+gh@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" styl=
+e=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);paddin=
+g-left:1ex"><div dir=3D"ltr"><br></div><br><div class=3D"gmail_quote"><div =
+dir=3D"ltr" class=3D"gmail_attr">On Mon, Jan 23, 2023 at 2:44 PM Balveen Si=
+ngh &lt;<a href=3D"mailto:drbalveensingh@gmail.com" target=3D"_blank">drbal=
+veensingh@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quot=
+e" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204)=
+;padding-left:1ex"><div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div=
+ dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message ---------<br=
+>From: <strong class=3D"gmail_sendername" dir=3D"auto">Balveen Singh</stron=
+g> <span dir=3D"auto">&lt;<a href=3D"mailto:drbalveensingh@gmail.com" targe=
+t=3D"_blank">drbalveensingh@gmail.com</a>&gt;</span><br>Date: Thu, Jan 19, =
+2023 at 5:49 PM<br>Subject: Paper work for Navraj C<br>To:  &lt;<a href=3D"=
+mailto:hr@labelbox.com" target=3D"_blank">hr@labelbox.com</a>&gt;<br></div>=
+<br><br><div dir=3D"ltr"><br></div>
+</div></div>
+</blockquote></div>
+</blockquote></div>
+
+--0000000000008aebfe05f2f6fe45--

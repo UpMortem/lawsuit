@@ -1,0 +1,215 @@
+Delivered-To: nlake44@gmail.com
+Received: by 2002:a2e:9cc6:0:0:0:0:0 with SMTP id g6csp7287ljj;
+        Tue, 18 Apr 2023 12:58:01 -0700 (PDT)
+X-Received: by 2002:a17:902:e802:b0:19f:8ad5:4331 with SMTP id u2-20020a170902e80200b0019f8ad54331mr3572185plg.38.1681847881526;
+        Tue, 18 Apr 2023 12:58:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1681847881; cv=none;
+        d=google.com; s=arc-20160816;
+        b=awNlSHq0/axvjVIO4XCGmx2hbBzK3NEiRHyUE7hCmrKVxETgUeMe7DfQchbn/kXRVx
+         RNVe6jT5EtzNBL10kZfi5bDrTn14bgZXQwKcpvDyXrm85gW45+royLjWqdUkM1NmDTi2
+         9Jxdw3ma8cE4g0q1NKyi3KE9b62oJa2ndhtPiLbU2LAi6rq4hi1g/H+Oc1mzl1XMQvPK
+         eCpmu9yd0t8aiHIN1wUwPwV5RSEjFoicF8zxpEtQ96axazrSqI01gj34mSXqKdDlIsFu
+         Iv+mfhB3u2vOQmQvHBNaRcjW94aT+GiAMdsRti+HnkbifK14C6b1zX57r774/IyvZTZq
+         J+hg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=iRLq3ZsdKM3UhBgp/iiCBCCBQkilnsT46vow07vIXf8=;
+        b=FPx3O4OTGCqBNEBHsUwfsQiLNYS3r/AZwBDX/R7H8O9/AyTzpAUD4O2EHQoLxQtb3u
+         t5WbgoE0FU9jhFf0Wpb2OEockIJGua0hmi9erY2Vjh/sNdp4ubyYdVNwV7qJ3XP5oipY
+         3HjcnfMt99m9UjZ4IA4QUIt67VCNFyhEbFr7jp2hti+KpY7X4vlwUDvSXLQLK7vuMLEX
+         ymSTQYbUkeIY7TLhPTkwj2ka72oNgMXfPyoR3QeKnwtypCh+Sb9AZG15HhNEwGLT5pbp
+         2ELkkLpTwqzJFglKkOBfA3EhG1z/FnlsofFaap4Ym3q/pCYSGij2fBOQe2YajB1gltUW
+         ejrA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=nrLEhWJG;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=labelbox.com
+Return-Path: <jackie@labelbox.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id c12-20020a170902848c00b001a26fa1b044sor2912429plo.22.2023.04.18.12.58.01
+        for <nlake44@gmail.com>
+        (Google Transport Security);
+        Tue, 18 Apr 2023 12:58:01 -0700 (PDT)
+Received-SPF: pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@labelbox.com header.s=google header.b=nrLEhWJG;
+       spf=pass (google.com: domain of jackie@labelbox.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=jackie@labelbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=labelbox.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=labelbox.com; s=google; t=1681847880; x=1684439880;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=iRLq3ZsdKM3UhBgp/iiCBCCBQkilnsT46vow07vIXf8=;
+        b=nrLEhWJGrVxd4Ar3Lrm/L7NnTkef71/EVxDzub1UzRMYClK+VzVmc1iIxHKonVAcEb
+         Wl73CyMGsv2UivZ2xlAeHWw5satwYT3PTQ4xj+g1lmK3yGhrtzhCyKDK1RdTrU/7+3oE
+         pDvLfzcdc68+TioohSKOv6Ufeoz1jy0QUp4lUfi/VjH8tLnL/pTajnxG4Dy14OGDWxc8
+         5gk18JkzZXgmsxsTpqzAMmbiGU59OeA1e4IEpGMQMGQGZdfI2M/Xy3AkDvQiNbmmYsyR
+         eIGOlFtw8RFdgaaNDozMq1E9HjoRzHzZ2typ6sMs495kKvctFj9U0P9dzjehUoyiu/cq
+         VCKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1681847881; x=1684439881;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=iRLq3ZsdKM3UhBgp/iiCBCCBQkilnsT46vow07vIXf8=;
+        b=EPev5HeCf3xbWKfy4UAEoH3mg7JQVkO6fcj4P41FjJM4JVWgAbQl9s9rOkIftYTc8P
+         6OnmoOAOnbONh9W3l2QGAtJYhi4Cr5J5h3Rba72II3X/kNgFVYOqfqr56zf1aVtjkhCO
+         BPn9IvVYfjz3tj9bhdMSbb2hLaTbTtREFXn0AHO65oeIWZOvNPoiIE50md46O4BdmJYU
+         gx8csmJKRCZIBvAuFGSf0qbPgb99Yup0rcSZsDWKZPjrNcTwqWwFPV6P8ZTOniTnlDwr
+         kICyebgSiXbzpKcsydqmsBYWw0L6BTUSv48Z4uvAc7s0BTQuCd111wFkS70ldaDLY2kS
+         F7vQ==
+X-Gm-Message-State: AAQBX9dnqCoiQJtytMxGBq9nKsjmnMpghp/Yzyn/gRCfyGmxLze76gBk
+	CqatbporXS6LpcLmbFn5hLJHMBu0I6iqJcoqMFgzsdj8vBf7TIabSBK0gQ==
+X-Google-Smtp-Source: AKy350ZoHiYzaDqTaspw7V9mcgkANqc4FPflFLPxVYwWb8kD0jwmnBOQKEMIBv9BtZVeCX01deJrqLGOOO0Bq8/UYF4=
+X-Received: by 2002:a17:902:f302:b0:19f:1d62:4393 with SMTP id
+ c2-20020a170902f30200b0019f1d624393mr1184740ple.7.1681847880517; Tue, 18 Apr
+ 2023 12:58:00 -0700 (PDT)
+MIME-Version: 1.0
+From: HR <hr@labelbox.com>
+Date: Tue, 18 Apr 2023 12:57:49 -0700
+Message-ID: <CAPTSF-W77GKdTV6ymzF+zD3usyUNFOf5wFF1CzYLN8db70mN7A@mail.gmail.com>
+Subject: Labelbox Employment Termination Notice
+To: Navraj Chohan <nlake44@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000007c220905f9a1b935"
+
+--0000000000007c220905f9a1b935
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Apr 18, 2023
+
+
+Dear Mr. Chohan,
+
+This is to inform you that you are terminated from your position at
+Labelbox, Inc. for reasons that are unrelated to your leave.
+
+We have completed our investigation and have determined that you violated
+company policies against harassment and bullying and have decided to
+terminate your employment. The Company has certain rules of conduct, which
+set forth the basic rules of civility and comportment in the workplace. The
+company=E2=80=99s rules of conduct and its harassment policy provide that a=
+busive
+conduct, bullying and threats are not tolerated and can lead to discipline,
+including termination.
+
+Section 16 of the Labelbox Employee Handbook states, =E2=80=9CHarassment is
+unwelcome conduct that creates an intimidating, hostile or offensive
+working environment or that interferes with work performance. Such conduct
+constitutes harassment when=E2=80=A6such conduct has the purpose or effect =
+of
+substantially interfering with an individual=E2=80=99s work performance or =
+creating
+an intimidating, hostile or offensive working environment. This is a
+zero-tolerance policy. Any employee determined by the Company to be
+responsible for harassment, discrimination, retaliation or other conduct in
+violation of this policy will be subject to appropriate disciplinary
+action, up to, and including termination.=E2=80=9D
+
+Your conduct in the form of texts and messages via LinkedIn to co-workers,
+which we have reviewed, violates those policies and upset co-workers and
+caused them to complain to HR of harassment. In addition to engaging in
+misconduct in violation of company policies, the company considers it an
+essential job duty that employees comport themselves in a professional
+manner.
+
+Your behavior was unprofessional and caused considerable disruption and
+enough concern among employees so they raised these complaints. Regardless
+of your condition, you have not met the essential qualifications for your
+position and excusing your misconduct will conflict with the continuing
+needs of the business.
+
+
+
+Best Regards,
+
+Labelbox HR
+
+hr@labelbox.com
+
+--0000000000007c220905f9a1b935
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span id=3D"gmail-docs-internal-guid-261dfad0-7fff-0807-fe=
+9f-291644d0a190"><p dir=3D"ltr" style=3D"line-height:1.656;margin-top:0pt;m=
+argin-bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;backgroun=
+d-color:transparent;font-variant-numeric:normal;font-variant-east-asian:nor=
+mal;font-variant-alternates:normal;vertical-align:baseline;white-space:pre-=
+wrap">Apr 18, 2023</span></p><p dir=3D"ltr" style=3D"line-height:1.656;marg=
+in-top:0pt;margin-bottom:0pt"><br></p><p dir=3D"ltr" style=3D"line-height:1=
+.656;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-f=
+amily:Arial;background-color:transparent;font-variant-numeric:normal;font-v=
+ariant-east-asian:normal;font-variant-alternates:normal;vertical-align:base=
+line;white-space:pre-wrap">Dear Mr. Chohan,</span></p><br><p dir=3D"ltr" st=
+yle=3D"line-height:1.656;margin-top:0pt;margin-bottom:0pt"><span style=3D"f=
+ont-size:11pt;font-family:Arial;color:rgb(0,0,0);background-color:transpare=
+nt;font-variant-numeric:normal;font-variant-east-asian:normal;font-variant-=
+alternates:normal;vertical-align:baseline;white-space:pre-wrap">This is to =
+inform you that you are terminated from your position at Labelbox, Inc. for=
+ reasons that are unrelated to your leave.=C2=A0=C2=A0</span></p><br><p dir=
+=3D"ltr" style=3D"line-height:1.656;margin-top:0pt;margin-bottom:0pt"><span=
+ style=3D"font-size:11pt;font-family:Arial;background-color:transparent;fon=
+t-variant-numeric:normal;font-variant-east-asian:normal;font-variant-altern=
+ates:normal;vertical-align:baseline;white-space:pre-wrap">We have completed=
+ our investigation and have determined that you violated company policies a=
+gainst harassment and bullying and have decided to terminate your employmen=
+t. The Company has certain rules of conduct, which set forth the basic rule=
+s of civility and comportment in the workplace. The company=E2=80=99s rules=
+ of conduct and its harassment policy provide that abusive conduct, bullyin=
+g and threats are not tolerated and can lead to discipline, including termi=
+nation.=C2=A0=C2=A0</span></p><br><p dir=3D"ltr" style=3D"line-height:1.656=
+;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-famil=
+y:Arial;background-color:transparent;font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline=
+;white-space:pre-wrap">Section 16 of the Labelbox Employee Handbook states,=
+ =E2=80=9CH</span><span style=3D"font-size:11pt;font-family:Arial;color:rgb=
+(0,0,0);background-color:transparent;font-variant-numeric:normal;font-varia=
+nt-east-asian:normal;font-variant-alternates:normal;vertical-align:baseline=
+;white-space:pre-wrap">arassment is unwelcome conduct that creates an intim=
+idating, hostile or offensive working environment or that interferes with w=
+ork performance. Such conduct constitutes harassment when=E2=80=A6such cond=
+uct has the purpose or effect of substantially interfering with an individu=
+al=E2=80=99s work performance or creating an intimidating, hostile or offen=
+sive working environment. This is a zero-tolerance policy. Any employee det=
+ermined by the Company to be responsible for harassment, discrimination, re=
+taliation or other conduct in violation of this policy will be subject to a=
+ppropriate disciplinary action, up to, and including termination.</span><sp=
+an style=3D"font-size:11pt;font-family:Arial;background-color:transparent;f=
+ont-variant-numeric:normal;font-variant-east-asian:normal;font-variant-alte=
+rnates:normal;vertical-align:baseline;white-space:pre-wrap">=E2=80=9D</span=
+></p><br><p dir=3D"ltr" style=3D"line-height:1.656;margin-top:0pt;margin-bo=
+ttom:0pt"><span style=3D"font-size:11pt;font-family:Arial;background-color:=
+transparent;font-variant-numeric:normal;font-variant-east-asian:normal;font=
+-variant-alternates:normal;vertical-align:baseline;white-space:pre-wrap">Yo=
+ur conduct in the form of texts and messages via LinkedIn to co-workers, wh=
+ich we have reviewed, violates those policies and upset co-workers and caus=
+ed them to complain to HR of harassment. In addition to engaging in miscond=
+uct in violation of company policies, the company considers it an essential=
+ job duty that employees comport themselves in a professional manner.=C2=A0=
+=C2=A0</span></p><br><p dir=3D"ltr" style=3D"line-height:1.656;margin-top:0=
+pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:Arial;backg=
+round-color:transparent;font-variant-numeric:normal;font-variant-east-asian=
+:normal;font-variant-alternates:normal;vertical-align:baseline;white-space:=
+pre-wrap">Your behavior was unprofessional and caused considerable disrupti=
+on and enough concern among employees so they raised these complaints. Rega=
+rdless of your condition, you have not met the essential qualifications for=
+ your position and excusing your misconduct will conflict with the continui=
+ng needs of the business.</span></p><div><span><br></span></div><div><span>=
+<br></span></div><br><p dir=3D"ltr" style=3D"line-height:1.656;margin-top:0=
+pt;margin-bottom:0pt;padding:0pt 0pt 10pt"><span style=3D"font-size:11pt;fo=
+nt-family:Arial;color:rgb(0,0,0);background-color:transparent;font-variant-=
+numeric:normal;font-variant-east-asian:normal;font-variant-alternates:norma=
+l;vertical-align:baseline;white-space:pre-wrap">Best Regards,</span></p><p =
+dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><sp=
+an style=3D"font-size:11pt;font-family:Arial;color:rgb(0,0,0);background-co=
+lor:transparent;font-variant-numeric:normal;font-variant-east-asian:normal;=
+font-variant-alternates:normal;vertical-align:baseline;white-space:pre-wrap=
+">Labelbox HR=C2=A0</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family=
+:Arial;color:rgb(17,85,204);font-variant-numeric:normal;font-variant-east-a=
+sian:normal;font-variant-alternates:normal;text-decoration-line:underline;v=
+ertical-align:baseline;white-space:pre-wrap"><a href=3D"mailto:hr@labelbox.=
+com">hr@labelbox.com</a></span></p></span><br class=3D"gmail-Apple-intercha=
+nge-newline"></div>
+
+--0000000000007c220905f9a1b935--
