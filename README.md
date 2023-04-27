@@ -5,4 +5,6 @@ I, Navraj Singh Chohan, am suing Labelbox my former employer for wrongful termin
 
 I will be using ChatGPT and AutoGPT to proceed with the lawsuit and representing myself.
 
-This README will be updated with more information depending on level of interest.
+This README will be updated with more information depending on level of interest. 
+
+Some information will not be shared on here to protect the privacy of those involved.
