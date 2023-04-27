@@ -8,3 +8,6 @@ I will be using ChatGPT and AutoGPT to proceed with the lawsuit and representing
 This README will be updated with more information depending on level of interest. 
 
 Some information will not be shared on here to protect the privacy of those involved.
+
+# Life Story
+TODO: (will be input for AutoGPT)
