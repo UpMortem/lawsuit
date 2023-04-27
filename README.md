@@ -9,5 +9,7 @@ This README will be updated with more information depending on level of interest
 
 Some information will not be shared on here to protect the privacy of those involved.
 
+All communication between entities will be shared until court ordered to stop.
+
 # Life Story
 TODO: (will be input for AutoGPT)
